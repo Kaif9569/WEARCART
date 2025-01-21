@@ -12,7 +12,9 @@ const app = express();
 const port = process.env.PORT || 4000;
 connectDB();
 connectCloudinary();
-
+app.get('/',(req,res)=>{
+    res.send("heello")
+})
 // middleware
 app.use(express.json());
 app.use(cors());
