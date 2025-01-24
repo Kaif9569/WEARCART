@@ -17,7 +17,7 @@ app.get('/',(req,res)=>{
 })
 // middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({origin:"http://wearcart.vercel.app"}));
 
 //api endpoints
 app.use('/api/user',userRouter);
