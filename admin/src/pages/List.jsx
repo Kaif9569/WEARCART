@@ -8,7 +8,8 @@ const List = ({token}) => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(backendUrl+"/api/product/list");
+      const response = await axios.get(backendUrl+"/api/product/list",{headers:{token}});
+      console.log(backendUrl)
       console.log(response.data)
       if (response.data.success) {
         setList(response.data.products);

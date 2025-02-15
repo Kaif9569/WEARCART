@@ -87,7 +87,7 @@ const ShopContextProvider = ({ children }) => {
   // fetch products
   const getProductData = async()=>{
     try {
-      const response =await axios.get(backendUrl + '/api/product/list');
+      const response =await axios.get(backendUrl+'/api/product/list',{headers:{token}});
       if(response.data.success){
         console.log(response.data)
         setProducts(response.data.products);
@@ -103,7 +103,7 @@ const ShopContextProvider = ({ children }) => {
 
   const getUserCart = async (token)=>{
     try {
-      const response= await axios.post(backendUrl + '/api/cart/get',{},{headers:{token}});
+      const response= await axios.post(backendUrl+'/api/cart/get',{},{headers:{token}});
       if(response.data.success){
         setCartItems(response.data.cartData)
       }
